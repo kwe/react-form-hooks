@@ -1,6 +1,5 @@
 import React from 'react';
-import { useForm, Controller } from "react-hook-form";
-import ReactDatePicker from "react-datepicker";
+import { useForm} from "react-hook-form";
 
 import './App.css';
 
@@ -28,7 +27,7 @@ type Inputs = {
 };
 
 function App() {
-  const { register, handleSubmit, errors, getValues, control } = useForm<Inputs>();
+  const { register, handleSubmit, errors, getValues } = useForm<Inputs>();
   const onSubmit = (data: any) => console.log(data);
 
   return (
@@ -79,15 +78,7 @@ function App() {
         </div>
         <div>
           <label htmlFor="expiry_date">Expiry date</label>
-          <Controller
-            as={ReactDatePicker}
-            control={control}
-            valueName="expiry_date" // DateSelect value's name is selected
-            onChange={(expiry_date) => expiry_date}
-            name="expiry_date"
-            className="input"
-            placeholderText="Select date"
-          />
+
           <input name="expiry_date" type="date" ref={register({ required: "An Expiry date is required" })} />
           {errors.expiry_date ? <div>{errors.expiry_date.message}</div> : null}
         </div>
