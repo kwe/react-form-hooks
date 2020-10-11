@@ -35,19 +35,19 @@ function App() {
         <div className="form-group">
           <div>
             <label htmlFor="email">Email</label>
-            <input name="email" placeholder="you@example.com" className={`form-control ${errors.email? "is-invalid":""}`} type="email" ref={register({
+            <input name="email" placeholder="e.g you@example.com" className={`form-control ${errors.email? "is-invalid":""}`} type="email" ref={register({
               required: "An Email address is required",
             })} />
             {errors.email ? <div className="invalid-feedback">{errors.email.message}</div> : null}
           </div>
           <div>
             <label htmlFor="first_name">First Name</label>
-            <input name="first_name" placeholder="Tom" className={`form-control ${errors.first_name ? "is-invalid" : ""}`} type="text" ref={register({ required: "A first name is required" })} />
+            <input name="first_name" placeholder="e.g Tom" className={`form-control ${errors.first_name ? "is-invalid" : ""}`} type="text" ref={register({ required: "A first name is required" })} />
             {errors.first_name ? <div className="invalid-feedback">{errors.first_name.message}</div> : null}
           </div>
           <div>
             <label htmlFor="surname">Surname</label>
-            <input name="surname" placeholder="Nook" className={`form-control ${errors.surname ? "is-invalid" : ""}`} type="text" ref={register({ required: "A Surname is required" })} />
+            <input name="surname" placeholder="e.g Nook" className={`form-control ${errors.surname ? "is-invalid" : ""}`} type="text" ref={register({ required: "A Surname is required" })} />
             {errors.surname ? <div className="invalid-feedback">{errors.surname.message}</div> : null}
           </div>
           <div>
